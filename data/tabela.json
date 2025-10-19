@@ -1,0 +1,37 @@
+[
+  {
+    "destino": "Moscou & São Petersburgo",
+    "data": "10/01/2026",
+    "duracao": "12 dias",
+    "vagas": 5,
+    "preco": "950"
+  },
+  {
+    "destino": "Explorando Kiev e Chernobyl",
+    "data": "15/01/2026",
+    "duracao": "7 dias",
+    "vagas": 8,
+    "preco": "600"
+  },
+  {
+    "destino": "Sibéria Express (Inverno)",
+    "data": "02/02/2026",
+    "duracao": "15 dias",
+    "vagas": 3,
+    "preco": "1800"
+  },
+  {
+    "destino": "Mochilão: Capitais do Leste",
+    "data": "20/02/2026",
+    "duracao": "10 dias",
+    "vagas": 10,
+    "preco": "800"
+  },
+  {
+    "destino": "Ucrânia Histórica (Lviv)",
+    "data": "05/03/2026",
+    "duracao": "8 dias",
+    "vagas": 6,
+    "preco": "650"
+  }
+]

@@ -1,0 +1,323 @@
+/* Importação de Fontes (Mantidas: Montserrat & Roboto) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap');
+
+/* --------------------------------------
+  VARIÁVEIS DE COR
+  --------------------------------------
+*/
+:root {
+    --avant-primary: #212529; /* Chumbo (Primária) */
+    --avant-accent: #FFC107;  /* Amarelo Vibrante (Acento) */
+    --avant-light: #FFFFFF;   /* Branco (Secundária) */
+    --avant-text: #333;
+    --avant-dark: #212529; 
+    --avant-dark-text: #f0f0f0; /* Texto para fundos escuros */
+}
+
+/* NOVO: Smooth scroll para todo o site */
+html {
+    scroll-behavior: smooth;
+}
+
+/* NOVO: Barra de rolagem customizada (Estética Amarela) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--avant-dark); /* Fundo da barra (Chumbo) */
+}
+::-webkit-scrollbar-thumb {
+    background: var(--avant-accent); /* Cor da barra (Amarelo) */
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #E0A800; /* Amarelo mais escuro no hover */
+}
+
+
+/* 1. Regra base */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--avant-text);
+    background-color: #f8f9fa; /* Fundo do body agora é cinza claro */
+}
+
+/* 2. Regra (Tipografia) */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* --------------------------------------------------- */
+/* ATUALIZADO: Navbar com mais presença e impacto */
+/* --------------------------------------------------- */
+.navbar {
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05) !important;
+    background-color: var(--avant-light) !important;
+}
+.navbar .navbar-brand {
+    font-size: 1.75rem; 
+}
+.navbar .nav-link {
+    font-size: 1.05rem; 
+    font-weight: 500; 
+    transition: color 0.3s ease;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--avant-accent) !important; 
+}
+
+
+/* 4. Regra (Layout) */
+.page-container {
+    padding-top: 100px; 
+}
+
+/* 5. Regra (Hero Section) */
+.hero-section {
+    height: 70vh;
+    min-height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://plus.unsplash.com/premium_photo-1697729939290-40a6275148cd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJ1c3NpYXxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000') no-repeat center center;
+    background-size: cover;
+    background-color: var(--avant-dark); 
+}
+
+/* 6. Regra (Botão customizado) */
+.btn-primary {
+    background-color: var(--avant-accent);
+    border-color: var(--avant-accent);
+    color: var(--avant-dark); 
+    font-weight: 700;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+}
+
+/* 7. Regra (Seletor Pseudoclasse) */
+.btn-primary:hover {
+    background-color: #E0A800; 
+    border-color: #E0A800;
+    color: var(--avant-dark);
+    transform: translateY(-2px); 
+}
+
+/* 8. Regra (Títulos de Seção) */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* 9. Regra (Seletor Pseudoelemento) */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--avant-accent); 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 10. Regra (Customização da Tabela) */
+.table thead {
+    border-bottom: 2px solid var(--avant-dark);
+}
+
+/* 11. Regra (Cards da Galeria) */
+.gallery-card {
+    border: none;
+    background-color: var(--avant-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 12. Regra (Pseudoclasse para Galeria) */
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.gallery-card img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: .25rem;
+}
+
+.gallery-card .card-body {
+    text-align: center;
+}
+
+/* --------------------------------------------------- */
+/* ATUALIZADO: Classes de Seção para Alternância e Sombra */
+/* --------------------------------------------------- */
+.section-container {
+    padding: 4.5rem 0; 
+}
+
+.section-shaded {
+    background-color: var(--avant-light);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.07); 
+    border-radius: 0.5rem; 
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 4.5rem 1rem; 
+}
+
+/* NOVO: Classe para seção com fundo escuro */
+.section-dark {
+    background-color: var(--avant-dark);
+    color: var(--avant-dark-text); /* Texto claro para fundo escuro */
+}
+/* Altera a cor do título na seção escura */
+.section-dark .section-title,
+.section-dark h2 {
+    color: var(--avant-light);
+}
+/* Garante que o texto secundário também seja claro */
+.section-dark p {
+    color: #ced4da; /* Um cinza mais claro para parágrafos */
+}
+/* Botão outline light para fundo escuro */
+.section-dark .btn-outline-dark {
+    border-color: var(--avant-light);
+    color: var(--avant-light);
+}
+.section-dark .btn-outline-dark:hover {
+    background-color: var(--avant-accent);
+    color: var(--avant-dark);
+    border-color: var(--avant-accent);
+}
+
+
+.bg-light-gray {
+    background-color: #f8f9fa; 
+}
+
+/* NOVO: Borda do vídeo mais redonda */
+.ratio.rounded, .ratio.rounded video {
+    border-radius: 0.5rem !important; 
+}
+
+
+/* --------------------------------------------------- */
+/* Animação do Menu Hamburger (Transformação em 'X') */
+/* --------------------------------------------------- */
+.navbar-toggler {
+    border: none;
+    padding: 0;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.hamburger-icon {
+    width: 30px;
+    height: 22px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+.hamburger-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--avant-dark); 
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+.hamburger-icon span:nth-child(1) { top: 0px; }
+.hamburger-icon span:nth-child(2) { top: 10px; }
+.hamburger-icon span:nth-child(3) { top: 20px; }
+
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+    background: var(--avant-text);
+}
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+    left: -30px;
+}
+.navbar-toggler[aria-expanded="true"] .hamburger-icon span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg);
+    background: var(--avant-text);
+}
+
+
+/* --------------------------------------------------- */
+/* ATUALIZADO: Estilos do Footer (Mais discreto) */
+/* --------------------------------------------------- */
+
+.site-footer {
+    background-color: var(--avant-dark);
+    color: #adb5bd; 
+    padding: 30px 0 15px 0; 
+}
+
+.site-footer h5 {
+    color: var(--avant-light); 
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px; 
+    font-size: 1.1rem; 
+}
+
+.site-footer p {
+    font-size: 0.85rem; 
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 5px; 
+}
+
+.footer-links a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem; 
+}
+
+.footer-links a:hover {
+    color: var(--avant-accent); 
+    text-decoration: none;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px; 
+}
+
+.footer-social a {
+    color: var(--avant-light);
+    font-size: 1.25rem; 
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--avant-accent);
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    border-top: 1px solid #495057; 
+    padding-top: 15px; 
+    margin-top: 15px; 
+    text-align: center;
+    font-size: 0.8rem; 
+}
