@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://images.unsplash.com/photo-1520106212299-d99c443e4568?fm=jpg&w=1200&q=80&fit=crop" alt="Banner da Avant - Catedral de São Basílio"/>
-</p>
-
 <h1 align="center">Avant. ✈️</h1>
 
 <p align="center">
