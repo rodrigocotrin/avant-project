@@ -1,29 +1,19 @@
-/* Importação de Fontes (Mantidas: Montserrat & Roboto) */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* --------------------------------------
-  VARIÁVEIS DE COR
-  --------------------------------------
-*/
+/*VARIÁVEIS DE COR*/
 :root {
-    --avant-primary: #212529; /* Chumbo (Primária) */
-    --avant-accent: #FFC107;  /* Amarelo Vibrante (Acento) */
-    --avant-light: #FFFFFF;   /* Branco (Secundária) */
+    --avant-primary: #212529; 
+    --avant-accent: #FFC107;  
+    --avant-light: #FFFFFF;   
     --avant-text: #333;
     --avant-dark: #212529; 
-    --avant-dark-text: #f0f0f0; /* Texto para fundos escuros */
+    --avant-dark-text: #f0f0f0; 
 }
 
-/*
-========================================
-ANIMAÇÕES GLOBAIS DE PÁGINA E CONTEÚDO (VERSÃO CORRIGIDA)
-========================================
-*/
+/*ANIMAÇÕES GLOBAIS*/
 
-/* 1. ANIMAÇÃO DE SAÍDA (Transição de Página)
-   Agora usa 'main' para funcionar em todas as páginas
-*/
+/* ANIMAÇÃO DE SAÍDA (Transição de Página)*/
 @keyframes pageLoadFadeOut {
     from { 
         opacity: 1; 
@@ -35,67 +25,73 @@ ANIMAÇÕES GLOBAIS DE PÁGINA E CONTEÚDO (VERSÃO CORRIGIDA)
     }
 }
 
-/* Aplica a animação de saída ao 'main' */
+/*Animação inicial galeria*/
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de entrada avaliacao*/
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 body.unloading main {
     animation: pageLoadFadeOut 0.3s ease-in forwards;
 }
 
-
-/* 2. ANIMAÇÃO DE ENTRADA (Carregamento de Conteúdo)
-   Também usa 'main' como seletor pai
-*/
+/* ANIMAÇÃO DE ENTRADA (Carregamento de Conteúdo)*/
 main > .section-container,
 main > .hero-section {
-    opacity: 0; /* Começa invisível */
+    opacity: 0; 
     animation: fadeInUp 0.7s ease-out forwards;
-    /* 'fadeInUp' é o keyframe que você já definiu */
 }
 
-/* Atraso (stagger) para cada bloco filho do 'main' */
+/* Atraso para cada bloco filho do 'main'*/
 main > :is(.section-container, .hero-section):nth-of-type(1) { animation-delay: 0.1s; }
 main > :is(.section-container, .hero-section):nth-of-type(2) { animation-delay: 0.2s; }
 main > :is(.section-container, .hero-section):nth-of-type(3) { animation-delay: 0.3s; }
 main > :is(.section-container, .hero-section):nth-of-type(4) { animation-delay: 0.4s; }
 
 
-/* 3. SUIVADE GERAL (Scroll)
-*/
+/* scroll suave em tudo)*/
 html {
     scroll-behavior: smooth;
 }
 
-/* NOVO: Barra de rolagem customizada (Estética Amarela) */
+/*Barra de rolagem customizada*/
 ::-webkit-scrollbar {
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: var(--avant-dark); /* Fundo da barra (Chumbo) */
+    background: var(--avant-dark);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--avant-accent); /* Cor da barra (Amarelo) */
+    background: var(--avant-accent); 
     border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #E0A800; /* Amarelo mais escuro no hover */
+    background: var(--avant-accent); 
 }
 
-
-/* 1. Regra base */
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--avant-text);
-    background-color: #f8f9fa; /* Fundo do body agora é cinza claro */
+    background-color: var(--avant-dark-text);
 }
 
-/* 2. Regra (Tipografia) */
 h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
 
-/* --------------------------------------------------- */
-/* ATUALIZADO: Navbar com mais presença e impacto */
-/* --------------------------------------------------- */
 .navbar {
     padding-top: 1rem; 
     padding-bottom: 1rem;
@@ -116,21 +112,19 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 
-/* 4. Regra (Layout) */
 .page-container {
     padding-top: 100px; 
 }
 
-/* 5. Regra (Hero Section) */
 .hero-section {
     height: 70vh;
     min-height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://plus.unsplash.com/premium_photo-1697729939290-40a6275148cd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJ1c3NpYXxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url('https://plus.unsplash.com/premium_photo-1697729939290-40a6275148cd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJ1c3NpYXxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000') no-repeat center center;
     background-size: cover;
     background-color: var(--avant-dark); 
 }
 
-/* 6. Regra (Botão customizado) */
 .btn-primary {
     background-color: var(--avant-accent);
     border-color: var(--avant-accent);
@@ -140,7 +134,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transition: all 0.3s ease;
 }
 
-/* 7. Regra (Seletor Pseudoclasse) */
 .btn-primary:hover {
     background-color: #E0A800; 
     border-color: #E0A800;
@@ -148,7 +141,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transform: translateY(-2px); 
 }
 
-/* 8. Regra (Títulos de Seção) */
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
@@ -157,7 +149,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     padding-bottom: 10px;
 }
 
-/* 9. Regra (Seletor Pseudoelemento) */
 .section-title::after {
     content: '';
     display: block;
@@ -170,19 +161,16 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transform: translateX(-50%);
 }
 
-/* 10. Regra (Customização da Tabela) */
 .table thead {
     border-bottom: 2px solid var(--avant-dark);
 }
 
-/* 11. Regra (Cards da Galeria) */
 .gallery-card {
     border: none;
     background-color: var(--avant-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 12. Regra (Pseudoclasse para Galeria) */
 .gallery-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -198,9 +186,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     text-align: center;
 }
 
-/* --------------------------------------------------- */
-/* ATUALIZADO: Classes de Seção para Alternância e Sombra */
-/* --------------------------------------------------- */
 .section-container {
     padding: 4.5rem 0; 
 }
@@ -214,21 +199,20 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     padding: 4.5rem 1rem; 
 }
 
-/* NOVO: Classe para seção com fundo escuro */
 .section-dark {
     background-color: var(--avant-dark);
-    color: var(--avant-dark-text); /* Texto claro para fundo escuro */
+    color: var(--avant-dark-text); 
 }
-/* Altera a cor do título na seção escura */
+
 .section-dark .section-title,
 .section-dark h2 {
     color: var(--avant-light);
 }
-/* Garante que o texto secundário também seja claro */
+
 .section-dark p {
-    color: #ced4da; /* Um cinza mais claro para parágrafos */
+    color: #ced4da; 
 }
-/* Botão outline light para fundo escuro */
+
 .section-dark .btn-outline-dark {
     border-color: var(--avant-light);
     color: var(--avant-light);
@@ -239,20 +223,16 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     border-color: var(--avant-accent);
 }
 
-
 .bg-light-gray {
     background-color: #f8f9fa; 
 }
 
-/* NOVO: Borda do vídeo mais redonda */
+
 .ratio.rounded, .ratio.rounded video {
     border-radius: 0.5rem !important; 
 }
 
-
-/* --------------------------------------------------- */
-/* Animação do Menu Hamburger (Transformação em 'X') */
-/* --------------------------------------------------- */
+/* Animação do Menu Hamburger (Transformação em 'X')*/
 .navbar-toggler {
     border: none;
     padding: 0;
@@ -299,11 +279,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     background: var(--avant-text);
 }
 
-
-/* --------------------------------------------------- */
-/* ATUALIZADO: Estilos do Footer (Mais discreto) */
-/* --------------------------------------------------- */
-
+/* Footer discreto */
 .site-footer {
     background-color: var(--avant-dark);
     color: #adb5bd; 
@@ -367,68 +343,49 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     font-size: 0.8rem; 
 }
 
-/*
-========================================
-GALERIA DE DESTINOS "TURBINADA"
-========================================
-*/
+/*Galeria*/
 
-/* 1. O ITEM DA GALERIA (O CONTÊINER)
-*/
+/*Conteiner*/
 .gallery-item {
-    display: block; /* Faz o <a> preencher o espaço */
-    position: relative; /* Âncora para o overlay */
-    overflow: hidden; /* O SEGREDO: corta o zoom da imagem */
+    display: block; 
+    position: relative; 
+    overflow: hidden; 
     border-radius: 12px;
-    height: 300px; /* Altura fixa para o mosaico funcionar */
+    height: 300px; 
     text-decoration: none;
-    
-    /* Sombra para profundidade no section-dark */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    
-    /* Transição suave do hover */
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* 2. A IMAGEM DENTRO DO ITEM 
-*/
+/* Imagem de dentro */
 .gallery-item .img-fluid {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Faz a imagem preencher sem distorcer */
-    
-    /* Transição para o zoom */
+    object-fit: cover; 
     transition: all 0.5s ease;
 }
 
-/* 3. O OVERLAY (A CAMADA ESCURA)
-*/
+/* Overlay escuro*/
 .gallery-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* Um gradiente sutil é mais elegante que uma cor sólida */
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 70%);
-    
-    opacity: 0; /* Começa invisível */
+    opacity: 0; 
     transition: all 0.4s ease-in-out;
 }
 
-/* 4. O CONTEÚDO DO OVERLAY (TEXTO)
-*/
+/*texto overlay*/
 .gallery-overlay .overlay-content {
     position: absolute;
     bottom: 1.5rem;
     left: 1.5rem;
     color: #fff;
-    
-    /* Animação: começa invisível e 20px abaixo */
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.4s ease 0.1s; /* Atraso de 0.1s */
+    transition: all 0.4s ease 0.1s; 
 }
 
 .overlay-content h5 {
@@ -443,72 +400,44 @@ GALERIA DE DESTINOS "TURBINADA"
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* 5. O ÍCONE DE ZOOM
-*/
+/*icone zoom*/
 .gallery-overlay .overlay-icon {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
     color: #fff;
     font-size: 1.25rem;
-    
-    /* Animação: começa invisível e menor */
     opacity: 0;
     transform: scale(0.8);
     transition: all 0.4s ease 0.1s;
 }
 
-/* 6. OS EFEITOS DE HOVER (A MÁGICA)
-*/
-
-/* Ao passar o mouse no item... */
+/* hover*/
 .gallery-item:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
 }
 
-/* ... a imagem dá zoom */
 .gallery-item:hover .img-fluid {
     transform: scale(1.1);
 }
 
-/* ... o overlay aparece */
 .gallery-item:hover .gallery-overlay {
     opacity: 1;
 }
 
-/* ... o texto sobe e aparece */
 .gallery-item:hover .overlay-content {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* ... o ícone cresce e aparece */
 .gallery-item:hover .overlay-icon {
     opacity: 1;
     transform: scale(1);
 }
 
-/*
-========================================
-ANIMAÇÃO DE ENTRADA (STAGGERED)
-========================================
-*/
-
-/* Define a animação de 'subir e aparecer' */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Prepara todos os itens para a animação */
 .gallery-grid > [class*="col-"] {
-    opacity: 0; /* Começa invisível */
+    opacity: 0;
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
@@ -520,62 +449,49 @@ ANIMAÇÃO DE ENTRADA (STAGGERED)
 .gallery-grid > [class*="col-"]:nth-child(5) { animation-delay: 0.5s; }
 
 
-/*
-========================================
-ESTILIZAÇÃO PÁGINA DE AVALIAÇÕES
-========================================
-*/
+/*Avaliacoes*/
 
-/* Define a página com um fundo limpo, focado no conteúdo */
+/* Define a página com um fundo limpo*/
 #reviews-page-container {
-    background-color: #f9f9f9; /* Um branco 'suave', menos agressivo */
+    background-color: #f9f9f9;
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
 
-/* Animação de fade-in para os títulos */
 .page-header-animated {
     animation: fadeIn 1s ease-out;
 }
 
-/* Define a tipografia da citação (o ponto principal) */
 .review-card blockquote {
-    font-family: 'Poppins', 'serif'; /* Fontes serifadas dão ar de seriedade */
+    font-family: 'Poppins', 'serif'; 
     font-size: 1rem;
     font-style: italic;
     color: #111;
     line-height: 1.6;
     margin-top: 1rem;
     padding-left: 1.5rem;
-    border-left: 3px solid #FFC107; /* Um sutil destaque de cor (amarelo) */
-    flex-grow: 1; /* Garante que o card se estique */
+    border-left: 3px solid --avant-accent; 
+    flex-grow: 1;
 }
 
-/* Ajusta o card para o estilo profissional */
 .review-card {
-    background-color: #ffffff;
+    background-color: var(--avant-light);
     border: 1px solid #e5e5e5;
     border-radius: 12px;
     padding: 2rem;
-    margin-bottom: 1.5rem; /* Espaçamento entre as linhas */
+    margin-bottom: 1.5rem; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-    
-    /* Configuração para animação de entrada */
-    opacity: 0; /* Começa invisível */
-    transform: translateY(30px); /* Começa 30px abaixo */
+    opacity: 0; 
+    transform: translateY(30px); 
     animation: fadeInUp 0.7s ease-out forwards;
-    
-    /* Transição suave para o hover */
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
-/* Efeito 'bombástico' de HOVER: o card 'levanta' */
 .review-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Informações do autor */
 .review-card .reviewer-info {
     display: flex;
     align-items: center;
@@ -586,7 +502,7 @@ ESTILIZAÇÃO PÁGINA DE AVALIAÇÕES
 .review-card .reviewer-info img {
     border-radius: 50%;
     margin-right: 1rem;
-    width: 60px; /* Imagem um pouco maior */
+    width: 60px; 
     height: 60px;
 }
 
@@ -602,32 +518,7 @@ ESTILIZAÇÃO PÁGINA DE AVALIAÇÕES
     margin-bottom: 0;
 }
 
-/* ========================================
-ANIMAÇÕES DE ENTRADA (Staggering)
-========================================
-*/
-
-/* Define a animação de 'subir e aparecer' */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Animação escalonada (staggered):
-  Cada card aparece um pouco depois do anterior.
-  Isso é MUITO profissional.
-*/
+/* Animação escalonada*/
 .row .col-lg-4:nth-child(1) .review-card { animation-delay: 0.1s; }
 .row .col-lg-4:nth-child(2) .review-card { animation-delay: 0.2s; }
 .row .col-lg-4:nth-child(3) .review-card { animation-delay: 0.3s; }
@@ -638,29 +529,16 @@ ANIMAÇÕES DE ENTRADA (Staggering)
 .row .col-lg-4:nth-child(8) .review-card { animation-delay: 0.8s; }
 .row .col-lg-4:nth-child(9) .review-card { animation-delay: 0.9s; }
 
-
-/*
-========================================
-ESTILIZAÇÃO DO CTA (CALL TO ACTION)
-========================================
-*/
-
-/* O contêiner para a chamada final */
+/*Botão cta (call to action)*/
 .cta-container {
-    padding: 4rem 0 2rem 0; /* Mais espaço acima */
+    padding: 4rem 0 2rem 0; 
     box-shadow: inset 0 0.5rem 1rem rgba(0,0,0,0.05) !important;
-    
-    margin-top: 3rem; /* Espaço após os cards */
-
-    /* Animação: aparece por último */
+    margin-top: 3rem; 
     opacity: 0;
     animation: fadeInUp 0.7s ease-out forwards;
-    
-    /* Atraso para aparecer DEPOIS do último card (0.9s + 0.3s = 1.2s) */
     animation-delay: 1.2s; 
 }
 
-/* O título principal do CTA */
 .cta-title {
     font-weight: 700;
     color: #000;
@@ -668,42 +546,35 @@ ESTILIZAÇÃO DO CTA (CALL TO ACTION)
     margin-bottom: 1rem;
 }
 
-/* O subtítulo de apoio */
 .cta-subtitle {
     font-size: 1.25rem;
     color: #333;
     margin-bottom: 2rem;
 }
 
-/*
-========================================
-O BOTÃO "EXTREMAMENTE ESTÉTICO"
-========================================
-*/
 .btn-cta-primary {
-    background-color: #111; /* Preto, estilo premium/Apple */
+    background-color: #111;
     color: #fff;
-    padding: 1rem 2.5rem; /* Padding grande, dá "peso" */
+    padding: 1rem 2.5rem; 
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px; /* Tipografia refinada */
-    border-radius: 8px; /* Levemente arredondado */
+    letter-spacing: 1px; 
+    border-radius: 8px; 
     text-decoration: none;
     border: none;
-    display: inline-block; /* Permite transformações */
-
-    /* A transição "bombástica" */
+    display: inline-block; 
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .btn-cta-primary:hover {
-    background-color: #FFC107; /* A cor de destaque do site */
-    color: #000; /* Texto inverte para preto */
-    transform: translateY(-5px) scale(1.05); /* Levanta e cresce */
+    background-color: var(--avant-accent); 
+    color: #000; 
+    transform: translateY(-5px) scale(1.05);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
     text-decoration: none;
 }
 
+/*links dos desenvolvedores coloridos*/
 i:hover{
     color: var(--avant-accent) !important;
     transition: color 0.3s ease; 
