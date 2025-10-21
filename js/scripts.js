@@ -112,3 +112,8 @@ function validarFormulario(event) {
     // Reseta o valor do range (bônus)
     document.getElementById('orcamento-valor').textContent = '$2000';
 }
+
+// Ela aplica uma classe ao <body> milissegundos antes do navegador mudar de página.
+window.addEventListener('beforeunload', () => {
+    document.body.classList.add('unloading');
+});
