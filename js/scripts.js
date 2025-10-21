@@ -33,7 +33,7 @@ async function carregarDadosTabela() {
     
     try {
         // 
-        const response = await fetch('data/tabela.json'); 
+        const response = await fetch('/data/tabela.json'); 
         if (!response.ok) {
             throw new Error(`Erro HTTP: ${response.status}`);
         }
